@@ -5,8 +5,8 @@
 	<%= f.label :password %>
 	<%= f.password_field :password %>
 <br>
-	
-	<% if am_i_signed_in?(current_user) %> <!-- aqui talvez se possa usar o 'signed_in?' -->
+
+	<% if am_i_signed_in?(current_user) %>
 		<%= link_to "Sign Out", signout_path, method: "delete" %>
 	<% else %>
 		<%= f.submit "Sign in" %>

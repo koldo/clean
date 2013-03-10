@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
-
+ 
   private
   
     def create_remember_token
@@ -19,7 +19,7 @@ end
 #              Method                                 Purpose
 #---------------------------------------------------------------------------------------
 #    user.auctions	            	Return an array of the user’s auctions
-#    user.auctions.create(arg)		Create a micropost (user_id = user.id)
-#    user.auctions.create!(arg)		Create a micropost (exception on failure)
-#    user.auctions.build(arg)	    Return a new Micropost object (user_id = user.id)
+#    user.auctions.create(arg)		Create a auctions (user_id = user.id)
+#    user.auctions.create!(arg)		Create a auctions (exception on failure)
+#    user.auctions.build(arg)	    Return a new Auction object (user_id = user.id)
 

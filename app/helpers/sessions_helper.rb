@@ -22,9 +22,12 @@ module SessionsHelper
 	#	!current_user.nil?
 	#end
 
-	def am_i_signed_in?(user)
-		user.id == current_user.id
+		def am_i_signed_in?(user)
+		if(!user == nil)
+			user.id == current_user.id
+		end
 	end
+	
 
 	private
 

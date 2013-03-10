@@ -1,15 +1,6 @@
-<%= @user.name %> -- <%= @user.email %>
-<br>List of Auctions:
-<% if @user.auctions.any? %>
-	<% @auctions.each do |auction| %>
-		<li>
-			<%= link_to auction.content, auction%>
-		</li>
-	<% end %>
+<% @auctions.each do |auction| %>
+	<li>
+		<%= link_to auction.content, auction %>
+	</li>
 <% end %>
-
-<% if am_i_signed_in?(@user) %>
-	Logged
-<% else %>
-	Not logged
-<% end %>
+ 
