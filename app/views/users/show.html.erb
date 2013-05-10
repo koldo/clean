@@ -1,8 +1,8 @@
-
+<%= @user.name %> -- <%= @user.email %> 
 <% if @user.auctions.any? %>
 	<% @auctions.each do |auction| %>
 		<li>
-			<%= auction.user_id %> -- <%= link_to auction.content, auction %>
+			<%= auction.user_id %> -- <%= link_to auction.content, auction%>
 		</li>
 	<% end %>
 <% end %>
