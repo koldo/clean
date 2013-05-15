@@ -1,10 +1,12 @@
 Clean::Application.routes.draw do
   resources :users
   resources :auctions
+#  resources :sessions, only: [:new, :create, :destroy]
 
   root :to => 'users#index'
-  match '/signup',  to: 'users#new'
-  
+#  match '/signup',  to: 'users#new'
+#  match '/signin',  to: 'sessions#new'
+#  match '/signout', to: 'sessions#destroy', via: :delete
 
 
 # routes criados pelo resources
@@ -19,9 +21,15 @@ Clean::Application.routes.draw do
 #    PUT              /users/1        update        user_path(user)       update user
 #    DELETE           /users/1        destroy       user_path(user)       delete user
 
+#    GET              /signin         new           signin_path           page for a new session (signin)
+#    POST             /sessions       create        sessions_path         create a new session
+#    DELETE           /signout        destroy       signout_path          delete a session (sign out)
+
+#---------------------------------------------------------------------------------------------------------
 
 # [match '/about', to: 'static_pages#about'] cria a named route: about_path => '/about'
 
+#---------------------------------------------------------------------------------------------------------
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
