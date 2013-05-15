@@ -4,5 +4,6 @@ class AuctionsController < ApplicationController
 
   def show
   	@auctions = Auction.find(params[:id])
+  	@user = @auctions.user
   end
 end

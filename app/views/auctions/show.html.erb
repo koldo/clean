@@ -1,2 +1,3 @@
 User_ID: <%= @auctions.user_id %><br>
-Content: <%= @auctions.content %>
+Content: <%= @auctions.content %><br>
+This auction belong to: <%= link_to @auctions.user.name, @auctions.user %><br>
