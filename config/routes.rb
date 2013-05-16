@@ -8,7 +8,6 @@ Clean::Application.routes.draw do
 #  match '/signin',  to: 'sessions#new'
 #  match '/signout', to: 'sessions#destroy', via: :delete
 
-
 # routes criados pelo resources
 
 # HTTP request  |       URI        |  Action  |      Named route     |         Purpose
