@@ -14,6 +14,7 @@ module SessionsHelper
 	end
 
 	def current_user
+		#@current_user ||= user_from_remember_token
 		@current_user ||= User.find_by_remember_token(cookies[:remember_token])
 	end
 
@@ -21,4 +22,9 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
+	private
+
+    def user_from_remember_token
+      User.authenticate_with_salt(*remember_token)
+    end
 end

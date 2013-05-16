@@ -7,8 +7,7 @@
 <br>
 	
 	<% if signed_in? %>
-		<!--<%= link_to "Sign Out", signout_path, method: "delete" %>-->
-		Sign Out
+		<%= link_to "Sign Out", signout_path, method: "delete" %>
 	<% else %>
 		<%= f.submit "Sign in" %>
 <% end %>
