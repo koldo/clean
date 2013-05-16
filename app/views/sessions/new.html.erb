@@ -5,5 +5,11 @@
 	<%= f.label :password %>
 	<%= f.password_field :password %>
 <br>
-	<%= f.submit "Sign in" %>
+	
+	<% if signed_in? %>
+		<!--<%= link_to "Sign Out", signout_path, method: "delete" %>-->
+		Sign Out
+	<% else %>
+		<%= f.submit "Sign in" %>
+<% end %>
 <% end %>

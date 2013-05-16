@@ -1,0 +1,29 @@
+[1mdiff --git a/app/controllers/sessions_controller.rb b/app/controllers/sessions_controller.rb[m
+[1mindex da536a1..805d5df 100644[m
+[1m--- a/app/controllers/sessions_controller.rb[m
+[1m+++ b/app/controllers/sessions_controller.rb[m
+[36m@@ -4,9 +4,11 @@[m [mclass SessionsController < ApplicationController[m
+ [m
+ 	def create[m
+ 		user = User.find_by_email(params[:session][:email])[m
+[31m-		redirect_to user[m
+[31m-[m
+[31m-		#render 'test'[m
+[32m+[m		[32mif user && user.authenticate(params[:session][:password])[m
+[32m+[m			[32mredirect_to user[m
+[32m+[m		[32melse[m
+[32m+[m			[32mrender 'fail'[m
+[32m+[m		[32mend[m
+ 	end[m
+ [m
+ 	def destroy[m
+[1mdiff --git a/app/views/sessions/test.html.erb b/app/views/sessions/test.html.erb[m
+[1mdeleted file mode 100644[m
+[1mindex 6a411ae..0000000[m
+[1m--- a/app/views/sessions/test.html.erb[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-Fez o login[m
+\ No newline at end of file[m
+warning: LF will be replaced by CRLF in app/controllers/sessions_controller.rb.
+The file will have its original line endings in your working directory.

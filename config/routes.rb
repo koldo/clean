@@ -3,10 +3,10 @@ Clean::Application.routes.draw do
   resources :auctions
   resources :sessions, only: [:new, :create, :destroy]
 
-  root :to => 'users#index'
+  root :to => 'sessions#new'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
-#  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signout', to: 'sessions#destroy', via: :delete
 
 # routes criados pelo resources
 
