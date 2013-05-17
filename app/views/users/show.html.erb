@@ -8,7 +8,7 @@
 	<% end %>
 <% end %>
 
-<% if signed_in? %>
+<% if am_i_signed_in?(@user) %>
 	Logged
 <% else %>
 	Not logged
